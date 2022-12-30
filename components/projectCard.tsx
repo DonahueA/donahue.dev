@@ -21,8 +21,8 @@ export default function ProjectCard(project : ProjectInfo){
             </div>
         </div>
         <div className="flex gap-4 align-text-bottom" style={{marginBottom: "44px"}}>
-            {project.visitLink ? <a href={project.visitLink} className="bg-black text-white py-2 px-10 rounded-3xl">Visit</a> : ""}
-            {project.githubLink ? <a href={project.githubLink} className="bg-white text-black border py-2 px-10  rounded-3xl border-black">Repository</a> : "" }
+            {project.visitLink && <a href={project.visitLink} className="bg-black text-white py-2 px-10 rounded-3xl">Visit</a>}
+            {project.githubLink && <a href={project.githubLink} className="bg-white text-black border py-2 px-10  rounded-3xl border-black">Repository</a>}
         </div>
         </div>
         <div>

@@ -1,5 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
+import Footer from "../../components/Footer";
+import Nav from "../../components/Nav";
 
 import ProjectCard from "../../components/projectCard";
 
@@ -12,19 +14,14 @@ const Home: NextPage = () => {
         <meta name="description" content="Donahue's webpage" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div  className="bg-[#181A1B] text-white flex justify-center sticky top-0 z-10">
-        <nav className="flex gap-8 font-bold pt-4 pb-2">
-          <a className="underline"  href="/" style={{textUnderlineOffset: "4px"}}>Home</a>
-          <a href="https://github.com/donahuea">GitHub</a>
-          <a>Resume</a>
-        </nav>
-      </div>
+      <Nav current={"home"} ></Nav>
       <main>
       <div className="bg-[#181A1B]">
         <div className="flex flex-col items-center pt-10 pb-10">
         <div className="mb-6 font-extrabold text-6xl text-white">Hello! I'm <span className="text-[#3F94C5]">Donahue</span></div>
-        <div className="text-white font-extrabold max-w-lg text-center">I am a <span className="text-[#3F94C5]">fullstack web developer</span> who enjoys making good software and great designs. 
-        Mostly working with <span className="text-[#3F94C5]">React</span> and <span className="text-[#3F94C5]">Node.js</span>.</div>
+        <div className="text-white font-extrabold max-w-lg text-center">I am a <span className="text-[#3F94C5]">fullstack web developer</span> with experience
+         in <span className="text-[#3F94C5]">Node.js</span> and <span className="text-[#3F94C5]">React</span>. 
+        Skilled in both front-end and back-end development.</div>
       </div>
       </div>
       <div className="mt-4">
@@ -45,7 +42,14 @@ const Home: NextPage = () => {
             githubLink="https://github.com/DonahueA/BadParkers"
             />
             </div>
-            <div className="font-bold text-4xl mt-6">Skills</div>
+            <br />
+            <hr />
+            <div id="blog" className="font-bold text-4xl mt-6">Blogs</div>
+            <ProjectCard  title={"Training a diffusion model from scratch"}
+            description={"Follow along as I train a diffusion model from scratch on a fashion dataset."}
+            image={"./shoe-diffusion.png"} techStack={["Python", "PyTorch", "Jupyter"]}
+            blogLink="./blog/training-diffusion-model-from-scratch"
+            />
             <div>
 
             </div>
@@ -53,30 +57,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       </main>
-      <footer  className="bg-[#181A1B] text-white mt-10 ">
-        <div className="max-w-7xl m-auto flex justify-between pt-8 pb-16">
-        <div>
-          <div className="text-4xl">
-          Let's get in touch
-          </div>
-          <div className="max-w-md  mt-4">
-
-            I am open to discussing new positions and opportunities. Please share as much info as possible so we can get the most out of our first catch-up.
-
-          </div>
-        </div>
-        <div>
-        <div>
-          <div className="text-xl">Email:</div>
-          <div>donahue.avila@gmail.com</div>
-        </div>
-        <div>
-          <div className="text-xl pt-4">Phone:</div>
-          <div>+1 (612) 707-9272</div>
-        </div>
-        </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 };

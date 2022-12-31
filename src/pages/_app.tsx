@@ -1,6 +1,7 @@
 import { type AppType } from "next/dist/shared/lib/utils";
 
 import "../styles/globals.css";
+import "prismjs/themes/prism-tomorrow.css";
 import { Manrope } from '@next/font/google'
 
 

@@ -5,7 +5,7 @@ export default function Nav(props: {current: string}) {
       <a className={props.current == "home" ? "underline" : ""}  href="/" style={{textUnderlineOffset: "4px"}}>Home</a>
       <a className={props.current  == "blog" ? "underline" : ""}  href="#blog" style={{textUnderlineOffset: "4px"}}>Blog</a>
       <a href="https://github.com/donahuea" >GitHub</a>
-      <a>Resume</a>
+      <a href="/donahue_avila_resume.pdf">Resume</a>
     </nav>
   </div>);
 }

@@ -31,7 +31,7 @@ const Home: NextPage = () => {
             <div className="flex flex-col gap-14">
             <ProjectCard title={"owo.bio - Social Media Link Aggregator"}
             description={"owo.bio gives creators a personalized page to share their social media links."}
-            image={"./owo.bio.png"} techStack={["React", "TypeScript", "TailwindCSS", "NextJS"]}
+            image={"./owo.bio.png"} techStack={["React", "TypeScript", "TailwindCSS", "NextJS", "MongoDB"]}
             visitLink="https://owo.bio"
             githubLink="https://github.com/DonahueA/owo.bio"
             />
@@ -41,6 +41,14 @@ const Home: NextPage = () => {
             image={"./BadParkers.png"} techStack={["Swift", "Firebase", "iOS"]}
             githubLink="https://github.com/DonahueA/BadParkers"
             />
+
+            <ProjectCard  title={"Text Tsunami - Web Game"}
+            description={"Text Tsunami is a casual single player web game"}
+            image={"./word-game.png"} techStack={["React", "TypeScript"]}
+            visitLink="https://word.donahue.dev"
+            githubLink="https://github.com/DonahueA/word-game"
+            />
+
             </div>
             <br />
             <hr />

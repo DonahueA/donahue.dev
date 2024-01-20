@@ -1,5 +1,4 @@
 import { type NextPage } from "next";
-import Head from "next/head";
 import ProjectCard from "../components/projectCard";
 
 
@@ -7,11 +6,6 @@ import ProjectCard from "../components/projectCard";
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>donahue.dev</title>
-        <meta name="description" content="Donahue's webpage" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main>
       <div className="bg-[#181A1B]">
         <div className="flex flex-col items-center pt-10 pb-10 text-center">

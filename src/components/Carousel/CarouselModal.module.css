@@ -1,0 +1,39 @@
+.WrapperFullscreen {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  padding: 16px;
+  z-index: 20;
+}
+.Hide{
+  display: none;
+}
+.backdrop {
+  position: absolute;
+  inset: 0;
+  background: hsl(0deg 0% 0% / 0.75);
+}
+
+
+.exit {
+  z-index: 99;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  background-color: black;
+  border-radius: 50%;
+  padding: 5px;
+  line-height: 0;
+}
+.exit:hover{
+  background-color: #171717;
+}
+
+.closeBtn {
+  z-index: 99;
+  padding: 16px;
+  color: black;
+  cursor: pointer;
+  background: transparent;
+  border: none
+}

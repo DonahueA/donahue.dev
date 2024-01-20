@@ -20,22 +20,25 @@ const Home: NextPage = () => {
         <div>
             <div className="font-bold text-4xl">Projects</div>
             <div className="flex flex-col gap-14">
+
+            <ProjectCard  title={"konekt.gg - Social web app"}
+            description={"A social media app for Valorant. Find friends to chat and play with."}
+            images={["./konekt/1.webp","./konekt/1.webp", "./konekt/2.webp", './konekt/3.webp']} techStack={["TypeScript", "Next.js", "PostgresSQL"]}
+            visitLink="https://konekt.gg"
+            // githubLink="https://github.com/DonahueA/BadParkers"
+            />
+
             <ProjectCard title={"owo.bio - Social Media Link Aggregator"}
             description={"owo.bio gives creators a personalized page to share their social media links."}
-            image={"./owo.bio.png"} techStack={["React", "TypeScript", "TailwindCSS", "NextJS", "MongoDB"]}
+            images={["./owo.bio.png"]} techStack={["React", "TypeScript", "TailwindCSS", "NextJS", "MongoDB"]}
             visitLink="https://owo.bio"
             githubLink="https://github.com/DonahueA/owo.bio"
             />
 
-            <ProjectCard  title={"BadParkers - Social iOS app"}
-            description={"BadParkers is an iOS application I made while learning Swift. Users could share photos of bad parking and see photos others users took locally."}
-            image={"./BadParkers.png"} techStack={["Swift", "Firebase", "iOS"]}
-            githubLink="https://github.com/DonahueA/BadParkers"
-            />
 
             <ProjectCard  title={"Text Tsunami - Web Game"}
             description={"Text Tsunami is a casual single player web game"}
-            image={"./word-game.png"} techStack={["React", "TypeScript"]}
+            images={["./word-game.png"]} techStack={["React", "TypeScript"]}
             visitLink="https://word.donahue.dev"
             githubLink="https://github.com/DonahueA/word-game"
             />

@@ -1,7 +1,9 @@
+import Carousel from "./Carousel"
+
 type ProjectInfo = {
     title: string,
     description: string,
-    image: string,
+    images: string[],
     visitLink? : string,
     githubLink? : string,
     blogLink? : string,
@@ -28,7 +30,10 @@ export default function ProjectCard(project : ProjectInfo){
         </div>
         </div>
         <div>
-            <img className="drop-shadow-lg rounded-lg border" src={project.image} alt={"owo.bio homepage"}  />
+            {/* <div style={{filter:'drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))',maxWidth: 638, borderRadius: 9}}>
+            <Carousel images={project.images} />
+            </div> */}
+            <img width={638} height={361} className="drop-shadow-lg rounded-lg border" style={{borderRadius: 9}} src={project.images[0]} alt={`Preview of ${project.title}`} />
             <div className="flex justify-center mt-4 align-baseline">
 
             

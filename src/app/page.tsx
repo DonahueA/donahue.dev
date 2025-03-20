@@ -24,15 +24,15 @@ const Home: NextPage = () => {
             <ProjectCard  title={"konekt.gg - Social web app"}
             description={"A social media app for Valorant. Find friends to chat and play with."}
             images={["./konekt/1.webp","./konekt/1.webp", "./konekt/2.webp", './konekt/3.webp']} techStack={["TypeScript", "Next.js", "PostgresSQL"]}
-            visitLink="https://konekt.gg"
+            // visitLink="https://konekt.gg"
             // githubLink="https://github.com/DonahueA/BadParkers"
             />
 
             <ProjectCard title={"owo.bio - Social Media Link Aggregator"}
             description={"owo.bio gives creators a personalized page to share their social media links."}
             images={["./owo.bio.png"]} techStack={["React", "TypeScript", "TailwindCSS", "NextJS", "MongoDB"]}
-            visitLink="https://owo.bio"
-            githubLink="https://github.com/DonahueA/owo.bio"
+            // visitLink="https://owo.bio"
+            // githubLink="https://github.com/DonahueA/owo.bio"
             />
 
 

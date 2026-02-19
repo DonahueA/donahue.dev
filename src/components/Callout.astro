@@ -1,0 +1,50 @@
+---
+interface Props {
+  type?: 'note' | 'warning' | 'tip' | 'danger';
+  title?: string;
+}
+
+const { type = 'note', title } = Astro.props;
+
+const labels: Record<NonNullable<Props['type']>, string> = {
+  note: 'Note',
+  warning: 'Warning',
+  tip: 'Tip',
+  danger: 'Danger',
+};
+---
+
+<aside class={`callout callout--${type}`} role="note">
+  <p class="callout__label">{title ?? labels[type]}</p>
+  <div class="callout__body">
+    <slot />
+  </div>
+</aside>
+
+<style>
+  .callout {
+    border-left: 4px solid;
+    padding: 0.75rem 1rem;
+    margin: 1.5rem 0;
+    border-radius: 0 4px 4px 0;
+    background: rgba(128, 128, 128, 0.08);
+  }
+
+  .callout--note  { border-color: #4a90d9; }
+  .callout--tip   { border-color: #3aa76d; }
+  .callout--warning { border-color: #d4a017; }
+  .callout--danger  { border-color: #d94a4a; }
+
+  .callout__label {
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0 0 0.4rem;
+    opacity: 0.8;
+  }
+
+  .callout__body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+</style>

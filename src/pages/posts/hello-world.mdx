@@ -1,0 +1,36 @@
+---
+layout: ../../layouts/Post.astro
+title: Hello World
+description: The first post — a quick tour of what this setup can do.
+date: "2026-02-18"
+tags: [meta, astro]
+---
+
+import Callout from '../../components/Callout.astro';
+
+Welcome! This is a sample MDX post showing how components work inline with markdown.
+
+## What this setup includes
+
+- Markdown & MDX via `@astrojs/mdx`
+- Syntax highlighting with Shiki (GitHub Dark theme)
+- A `Post` layout with date and tags
+- `Callout` and `PostCard` components
+
+## Using the Callout component
+
+<Callout type="tip">
+  MDX lets you drop in Astro components anywhere in your content.
+</Callout>
+
+<Callout type="warning" title="Heads up">
+  Make sure any component you import in MDX is an Astro component or a framework component with the correct integration installed.
+</Callout>
+
+## Code example
+
+```ts
+const greeting = 'hello world';
+```
+
+Add new `.md` or `.mdx` files to `src/pages/posts/` to create new posts.

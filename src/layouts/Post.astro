@@ -1,0 +1,68 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description?: string;
+    date: string;
+    tags?: string[];
+  };
+}
+
+const { title, description, date, tags = [] } = Astro.props.frontmatter;
+const dateObj = new Date(date);
+const formatted = dateObj.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Base title={title} description={description}>
+  <article class="prose">
+    <header class="post-header">
+      <h1>{title}</h1>
+      <time datetime={dateObj.toISOString()}>{formatted}</time>
+      {tags.length > 0 && (
+        <ul class="tags" role="list">
+          {tags.map((tag) => <li>{tag}</li>)}
+        </ul>
+      )}
+    </header>
+    <slot />
+  </article>
+</Base>
+
+<style>
+  .post-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  }
+
+  .post-header h1 {
+    margin-bottom: 0.25rem;
+  }
+
+  time {
+    font-size: 0.875rem;
+    opacity: 0.6;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin-top: 0.75rem;
+  }
+
+  .tags li {
+    background: rgba(128, 128, 128, 0.15);
+    padding: 0.2em 0.6em;
+    border-radius: 999px;
+    font-size: 0.8rem;
+  }
+</style>

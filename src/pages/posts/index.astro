@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+
+const modules = import.meta.glob('./*.{md,mdx}', { eager: true });
+
+const posts = Object.entries(modules)
+  .map(([path, mod]: [string, any]) => ({
+    href: `/posts/${path.replace(/^\.\//, '').replace(/\.mdx?$/, '')}`,
+    title: mod.frontmatter.title as string,
+    description: mod.frontmatter.description as string | undefined,
+    date: new Date(mod.frontmatter.date),
+    tags: (mod.frontmatter.tags ?? []) as string[],
+  }))
+  .sort((a, b) => b.date.getTime() - a.date.getTime());
+---
+
+<Base title="Posts">
+  <div class="prose">
+    <h1>Posts</h1>
+    {posts.map((post) => (
+      <PostCard
+        title={post.title}
+        description={post.description}
+        date={post.date}
+        href={post.href}
+        tags={post.tags}
+      />
+    ))}
+    {posts.length === 0 && <p>No posts yet.</p>}
+  </div>
+</Base>
